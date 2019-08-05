@@ -1,0 +1,55 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width,initial-scale=1')
+        title Lowin
+        link(rel='stylesheet', href='/css/auth.css')
+    body
+        .lowin
+            .lowin-brand
+                img(src='/assets/img/kodinger.jpg', alt='logo')
+            .lowin-wrapper
+                .lowin-box.lowin-login
+                    .lowin-box-inner
+                        form
+                            p Sign in to continue
+                            .lowin-group
+                                label
+                                    | Email 
+                                    a.login-back-link(href='#') Sign in?
+                                input.lowin-input(type='email', autocomplete='email', name='email')
+                            .lowin-group.password-group
+                                label
+                                    | Password 
+                                    a.forgot-link(href='#') Forgot Password?
+                                input.lowin-input(type='password', name='password', autocomplete='current-password')
+                            button.lowin-btn.login-btn
+                                | Sign In
+                            .text-foot
+                                | Don't have an account? 
+                                a.register-link(href='') Register
+                .lowin-box.lowin-register
+                    .lowin-box-inner
+                        form
+                            p Let's create your account
+                            .lowin-group
+                                label Name
+                                input.lowin-input(type='text', name='name', autocomplete='name')
+                            .lowin-group
+                                label Email
+                                input.lowin-input(type='email', autocomplete='email', name='email')
+                            .lowin-group
+                                label Password
+                                input.lowin-input(type='password', name='password', autocomplete='current-password')
+                            button.lowin-btn
+                                | Sign Up
+                            .text-foot
+                                | Already have an account? 
+                                a.login-link(href='') Login
+        script(src='/js/auth.js')
+        script.
+            Auth.init({
+            login_url: '#login',
+            forgot_url: '#forgot'
+            });
